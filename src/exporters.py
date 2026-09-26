@@ -9,6 +9,9 @@ from .analyzer import Minutes
 
 
 def to_markdown(minutes: Minutes, transcript: str | None = None) -> str:
+    topics_block = [f"- {t}" for t in minutes.topics] or ["- （无）"]
+    decisions_block = [f"- {d}" for d in minutes.decisions] or ["- （无）"]
+    risks_block = [f"- {r}" for r in minutes.risks] or ["- （无）"]
     lines = [
         f"# {minutes.title}",
         "",
@@ -18,10 +21,10 @@ def to_markdown(minutes: Minutes, transcript: str | None = None) -> str:
         minutes.summary,
         "",
         "## 议题",
-        *[f"- {t}" for t in minutes.topics] or ["- （无）"],
+        *topics_block,
         "",
         "## 决策",
-        *[f"- {d}" for d in minutes.decisions] or ["- （无）"],
+        *decisions_block,
         "",
         "## 待办",
     ]
@@ -36,7 +39,7 @@ def to_markdown(minutes: Minutes, transcript: str | None = None) -> str:
         ", ".join(minutes.keywords) or "（无）",
         "",
         "## 风险与待确认",
-        *[f"- {r}" for r in minutes.risks] or ["- （无）"],
+        *risks_block,
     ]
     if transcript:
         lines += ["", "## 原始转写", transcript]

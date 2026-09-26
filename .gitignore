@@ -5,8 +5,6 @@ __pycache__/
 .env
 .idea/
 .vscode/
-.cursor/
-.pytest_cache/
 outputs/
 *.log
 .DS_Store
@@ -14,5 +12,3 @@ outputs/
 *.pt
 *.bin
 docs/_template_dump.txt
-docs/_report_extract.txt
-*.zip
