@@ -10,10 +10,10 @@ from src.analyzer import analyze
 from src.asr import is_audio, read_transcript_file, transcribe_audio
 from src.exporters import to_docx_bytes, to_markdown
 
-st.set_page_config(page_title="会纪通 · 会议录音智能整理", page_icon="📝", layout="wide")
+st.set_page_config(page_title="会议纪要小帮手", page_icon="📝", layout="wide")
 
-st.title("会纪通 · 会议录音智能整理")
-st.caption("上传录音或转写文本，自动生成摘要、议题、决策与待办清单。无 API Key 时使用本地 TF-IDF 抽取。")
+st.title("会议纪要小帮手")
+st.caption("开完会把转写粘进来，一键整理出摘要、决策和待办。没配 Key 也能用本地方法跑。")
 
 with st.sidebar:
     st.header("使用说明")
